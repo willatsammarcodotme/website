@@ -14,15 +14,10 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
-
-interface Props {
-
-}
-
 const drawerWidth = 240;
 const navItems = ['Home', 'About', 'Contact'];
 
-export default function TopNavBar(props: Props) {
+export default function TopNavBar() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -79,7 +74,6 @@ export default function TopNavBar(props: Props) {
     </AppBar>
       <nav>
         <Drawer
-          // container={container}
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}
