@@ -6,20 +6,14 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import {CssBaseline} from "@mui/material";
+import Main from "./Components/Main";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <meta name="viewport" content="initial-scale=1, width=device-width"/>
-
-        <img src={logo} className="App-logo" alt="logo"/>
-        <a href={"http://sammarco.me"}>sammarco.me</a>
-      </header>
-      <body>
-      <CssBaseline />
-
-      </body>
+    <div className='App'>
+      <a href={"http://sammarco.me"}>sammarco.me</a>
+      <CssBaseline/>
+      <Main/>
     </div>
   );
 }
