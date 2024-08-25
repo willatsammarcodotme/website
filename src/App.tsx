@@ -6,17 +6,27 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import ResumeHeader from "./Components/ResumeHeader/ResumeHeader";
+import { createTheme } from "@mui/material";
+import { ThemeProvider } from "@mui/material";
 
-function App() {
-  return (
-    <div className="App">
-      <ResumeHeader
-        company='company'
-        jobDescription='jobDesccription'
-        dates={{start: new Date(), end: new Date()}}
-      />
-    </div>
-  );
+const theme = createTheme({
+    typography : {
+        fontFamily : `'Poppins', 'Roboto', 'Helvetica', 'Arial', sans-serif`,
+    },
+});
+
+function App () {
+    return (
+        <div className="App">
+            <ThemeProvider theme={theme}>
+                <ResumeHeader
+                    company='company'
+                    jobDescription='jobDesccription'
+                    dates={{start : new Date(), end : new Date()}}
+                />
+            </ThemeProvider>
+        </div>
+    );
 }
 
 export default App;
