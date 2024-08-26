@@ -23,10 +23,10 @@ const PersonHeader: FunctionComponent<Props> = ({fullName, contacts}) => {
     const matchXs = useMediaQuery(theme.breakpoints.only('xs'));
     console.log('theme', theme.breakpoints);
 
-const sxFullName = matchXs ? {fontSize: '9vw'} : {};
+const sxFullName = matchXs ? {fontSize: '8vw'} : {};
 
     return (
-        <Grid container className='personheader-wrapper'>
+        <Grid container className='personheader-wrapper' sx={{marginBottom: 1}}>
             <Grid item xs={12} ><Typography variant='h1' sx={sxFullName}> {fullName}</Typography></Grid>
             {matchXs
                 ? contacts.map((cntct) => (
