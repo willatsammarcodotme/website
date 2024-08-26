@@ -22,8 +22,6 @@ const PersonHeader: FunctionComponent<Props> = ({fullName, contacts}) => {
     const leftAlign = leftAlignMobile(theme);
 
     const matchXs = useMediaQuery(theme.breakpoints.only('xs'));
-    console.log('theme', theme.breakpoints);
-
     const sxFullName = matchXs ? {fontSize : '8vw'} : {};
 
     return (

@@ -5,6 +5,8 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import CompanyHeader from "./Components/CompanyHeader/CompanyHeader";
+import Fab from '@mui/material/Fab';
+import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import { Box, ThemeProvider } from "@mui/material";
 import PersonHeader from "./Components/PersonHeader/PersonHeader";
 import DivideSection from './Components/DivideSection/DivideSection';
@@ -14,8 +16,8 @@ import Skills from './Components/Skills/Skills';
 import Summary from './Components/Summary/Summary';
 import { contacts, skillItems, workItems } from './const/resume-items';
 
-
 function App () {
+
     return (<div className="App">
         <ThemeProvider theme={theme}>
             <PersonHeader
@@ -52,6 +54,9 @@ function App () {
                     />
                 </Box>
             </DivideSection>
+            <Fab color='primary' aria-label="download" sx={{position : 'fixed', bottom: 3, right: 3}}>
+                <a href='william_sammarco.pdf' target='_blank'><FileDownloadIcon htmlColor='white'/></a>
+            </Fab>
 
         </ThemeProvider>
     </div>);
