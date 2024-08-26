@@ -10,7 +10,7 @@ interface OwnProps {
 type Props = OwnProps;
 
 
-const ResumeHeader: FunctionComponent<Props> = ({company, jobDescription, dates}) => {
+const CompanyHeader: FunctionComponent<Props> = ({company, jobDescription, dates}) => {
 
     const theme = useTheme();
 
@@ -38,4 +38,4 @@ const ResumeHeader: FunctionComponent<Props> = ({company, jobDescription, dates}
     );
 };
 
-export default ResumeHeader;
+export default CompanyHeader;
