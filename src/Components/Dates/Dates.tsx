@@ -12,8 +12,6 @@ type Props = DatesProps;
 
 const Dates: FunctionComponent<Props> = ({start, end}) => {
 
-
-
     const datesRender = start === undefined
         ? getMmYyyy(end ?? new Date())
         : `${getMmYyyy(start)} - ${end ? getMmYyyy(end) : 'Present'}`;

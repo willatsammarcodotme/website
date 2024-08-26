@@ -18,8 +18,6 @@ const Summary: FunctionComponent<Props> = ({targetTitle, children}) => {
             <Box>
                 {children}
             </Box>
-
-
         </Box>
     );
 };

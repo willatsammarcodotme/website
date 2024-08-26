@@ -17,8 +17,7 @@ const CompanyHeader: FunctionComponent<Props> = ({company, jobTitle, dates, brea
     const theme = useTheme();
     const matchXs = useMediaQuery(theme.breakpoints.only('xs'));
 
-    return (
-        <Grid
+    return (<Grid
             container display='flex' className='resumeheader-wrapper' justifyContent='space-between' alignItems='center'
             marginTop={1}
             textAlign='left'
@@ -26,7 +25,7 @@ const CompanyHeader: FunctionComponent<Props> = ({company, jobTitle, dates, brea
             <Grid
                 item
                 xs={12}
-                {...{[breakpoint]: 6}}
+                {...{[breakpoint] : 6}}
                 className='resumeheader-companyjd-wrapper'
             >
                 <Typography variant='h2' className='resumeheader-company'>
@@ -37,18 +36,15 @@ const CompanyHeader: FunctionComponent<Props> = ({company, jobTitle, dates, brea
                     {jobTitle}
                 </Typography>
             </Grid>
-            {!matchXs &&
-                <Grid
+            {!matchXs && <Grid
                 item
-                    sm={6}
+                sm={6}
                 className='resumeheader-dates'
                 sx={{[theme.breakpoints.up("sm")] : {textAlign : 'right'}}}
             >
                 <Dates {...dates} />
-            </Grid>
-            }
-        </Grid>
-    );
+            </Grid>}
+        </Grid>);
 };
 
 export default CompanyHeader;
