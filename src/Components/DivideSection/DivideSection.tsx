@@ -1,5 +1,5 @@
 import { FunctionComponent, ReactNode } from 'react';
-import { Divider, Collapse, Typography,  } from '@mui/material';
+import { Divider, Typography, } from '@mui/material';
 import './DivideSection.css';
 
 interface OwnProps {
@@ -13,7 +13,7 @@ const DivideSection: FunctionComponent<Props> = ({sectionName = '', children = n
 
     return <>
         <Divider flexItem textAlign='left' variant='fullWidth' className={sectionName ? '' : 'MuiDivider-unlabeled'}>
-            <Typography variant='h2' sx={{textTransform: 'uppercase'}}>{sectionName}</Typography>
+            <Typography variant='h2' sx={{textTransform : 'uppercase'}}>{sectionName}</Typography>
         </Divider>
         {children}
     </>;
