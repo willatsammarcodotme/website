@@ -1,17 +1,18 @@
 import { FunctionComponent } from 'react';
-import { Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
-import Dates from '../Dates/Dates';
+import { Breakpoint, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
+import Dates, { DatesProps } from '../Dates/Dates';
 
 export interface CompanyHeaderProps {
     company: string;
     jobTitle: string;
-    dates: { start: Date, end?: Date }
+    dates: DatesProps;
+    breakpoint?: Breakpoint,
 }
 
 type Props = CompanyHeaderProps;
 
 
-const CompanyHeader: FunctionComponent<Props> = ({company, jobTitle, dates}) => {
+const CompanyHeader: FunctionComponent<Props> = ({company, jobTitle, dates, breakpoint = 'sm'}) => {
 
     const theme = useTheme();
     const matchXs = useMediaQuery(theme.breakpoints.only('xs'));
@@ -22,7 +23,12 @@ const CompanyHeader: FunctionComponent<Props> = ({company, jobTitle, dates}) => 
             marginTop={1}
             textAlign='left'
         >
-            <Grid item xs={12} sm={6} className='resumeheader-companyjd-wrapper'>
+            <Grid
+                item
+                xs={12}
+                {...{[breakpoint]: 6}}
+                className='resumeheader-companyjd-wrapper'
+            >
                 <Typography variant='h2' className='resumeheader-company'>
                     {company}
                 </Typography>
@@ -34,7 +40,7 @@ const CompanyHeader: FunctionComponent<Props> = ({company, jobTitle, dates}) => 
             {!matchXs &&
                 <Grid
                 item
-                sm={6}
+                    sm={6}
                 className='resumeheader-dates'
                 sx={{[theme.breakpoints.up("sm")] : {textAlign : 'right'}}}
             >

@@ -1,10 +1,11 @@
 import React, { FunctionComponent } from 'react';
-import { Grid, Theme, useTheme, useMediaQuery, Typography } from "@mui/material";
+import { Box, Grid, Theme, Typography, useMediaQuery, useTheme } from "@mui/material";
 import './PersonHeader.css';
+import Contact, { ContactProps } from '../Contact/Contact';
 
 interface OwnProps {
     fullName: string;
-    contacts: string[],
+    contacts: ContactProps[],
 }
 
 const leftAlignMobile = (theme: Theme) => ({
@@ -23,23 +24,25 @@ const PersonHeader: FunctionComponent<Props> = ({fullName, contacts}) => {
     const matchXs = useMediaQuery(theme.breakpoints.only('xs'));
     console.log('theme', theme.breakpoints);
 
-const sxFullName = matchXs ? {fontSize: '8vw'} : {};
+    const sxFullName = matchXs ? {fontSize : '8vw'} : {};
 
     return (
-        <Grid container className='personheader-wrapper' sx={{marginBottom: 1}}>
-            <Grid item xs={12} ><Typography variant='h1' sx={sxFullName}> {fullName}</Typography></Grid>
+        <Grid container className='personheader-wrapper' sx={{marginBottom : 1}}>
+            <Grid item xs={12}><Typography variant='h1' sx={sxFullName}> {fullName}</Typography></Grid>
             {matchXs
-                ? contacts.map((cntct) => (
-                <Grid key={cntct} item xs={12}>
-                    {cntct}
+                ? <Box sx={{marginBlock: 2}}>
+                {contacts.map((contactProps) => (
+                    <Grid key={contactProps.text} item xs={12} sx={leftAlign}>
+                        <Contact {...contactProps} />
+                    </Grid>
+                ))}
+                </Box>
+                : <Grid item xs={12} sx={leftAlign}>
+                    {contacts.map((contactProps) => (
+                        <Contact key={contactProps.text} {...contactProps} />
+                    ))}
                 </Grid>
-            ))
-                :
-                    <Grid item xs={12} sx={leftAlign}>
-                        {contacts.map(cntct => <span>{cntct}</span>)}
-                    </Grid>}
-
-
+            }
         </Grid>
     );
 };

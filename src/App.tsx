@@ -5,89 +5,56 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import CompanyHeader from "./Components/CompanyHeader/CompanyHeader";
-import { createTheme, ThemeProvider } from "@mui/material";
+import { Box, ThemeProvider } from "@mui/material";
 import PersonHeader from "./Components/PersonHeader/PersonHeader";
 import DivideSection from './Components/DivideSection/DivideSection';
-import { lighten } from '@mui/material/styles'
 import Company from './Components/Company/Company';
+import { theme } from './theme/theme'
+import Skills from './Components/Skills/Skills';
+import Summary from './Components/Summary/Summary';
+import { contacts, skillItems, workItems } from './const/resume-items';
 
-
-const primaryBlue = '#2427AB'
-const dividerLineBlue = lighten(primaryBlue, 0.8);
-
-const theme = createTheme({
-    typography : {
-
-        fontFamily : `'Poppins', 'Roboto', 'Helvetica', 'Arial', sans-serif`,
-        h1 : {color : primaryBlue, fontSize : '2.5rem', fontWeight : 500},
-        h2 : {fontSize : '1rem', fontWeight : 500},
-        h3 : {fontSize : '1rem', },
-        h4 : {fontSize : '1rem', },
-        h5 : {fontSize : '1rem', },
-        h6 : {fontSize : '1rem', },
-        // h3 : {fontSize : '1.5rem', fontWeight : 500},
-    },
-    components : {
-        MuiDivider : {
-            styleOverrides : {
-
-                root : () => ({
-                    // use JavaScript conditional expression
-                    color : primaryBlue,
-                    '&::before' : {
-                        width : 0,
-                    },
-                    '&::after' : {
-                        borderColor : dividerLineBlue,
-                    },
-                }),
-                wrapper : () => ({paddingBottom : '6px', paddingLeft : 0})
-            },
-        },
-        MuiListItemIcon : {
-            styleOverrides : {
-                root : () => ({
-                    minWidth: 'unset',
-                    alignSelf: 'baseline',
-                    marginRight: '6px',
-                    fontSize : '0.5rem',
-                })
-            }},
-        },
-    });
-
-const contacts = [
-    '773-302-6027',
-    'will@sammarco.me',
-    'linkedin.com/in/williamsammarco'
-];
-
-const achievements = [
-    'Led a team of 8 front-end developers, collaborated with lead engineers and POs in building compex inventory management scheduling software written in TypeScript React with Vite.',
-    'Led a team of 8 front-end developers, collaborated with lead engineers and POs in building compex inventory management scheduling software written in TypeScript React with Vite.',
-    'Led a team of 8 front-end developers, collaborated with lead engineers and POs in building compex inventory management scheduling software written in TypeScript React with Vite.',
-];
 
 function App () {
-    return (
-        <div className="App">
-            <ThemeProvider theme={theme}>
-                <PersonHeader
-                    fullName='William Sammarco'
-                    contacts={contacts}
-                />
-                <DivideSection sectionName={'Work Experience'}>
-                    <Company companyHeaderProps= {{
-                        company: 'company',
-                        jobTitle: 'jobDesccription',
-                        dates: {start : new Date(),},
-                    }} achievements={achievements} />
+    return (<div className="App">
+        <ThemeProvider theme={theme}>
+            <PersonHeader
+                fullName='William Sammarco'
+                contacts={contacts}
+            />
+            <DivideSection>
+                <Summary targetTitle='Lead Software Engineer'>
+                    Experienced technical lead building scalable solutions across many industries in 11 years of
+                    software
+                    development. Effectve leader, demonstrator, communicator. Collaborative team player with steady
+                    accountable growth. Expert in React, .NET, ASP, C#, HTML5 and many JavaScript frameworks.
+                </Summary>
+            </DivideSection>
+            <DivideSection sectionName={'Skills'}>
+                <Skills skillItems={skillItems} />
+            </DivideSection>
+            <DivideSection sectionName={'Work Experience'}>
 
-                </DivideSection>
+                {workItems.map(({header, achievements}) => (<Company
+                    companyHeaderProps={header}
+                    achievements={achievements}
+                />))}
 
-            </ThemeProvider>
-        </div>
-    );
+
+            </DivideSection>
+            <DivideSection sectionName='education'>
+                <Box textAlign='left'>
+                    <CompanyHeader
+                        company='B.S. in Computer Science, Minor in Economics'
+                        jobTitle='University Of Illinois, College of Engineering - Chicago, Illinois'
+                        dates={{end : new Date('8/1/2010')}}
+                        breakpoint={'lg'}
+                    />
+                </Box>
+            </DivideSection>
+
+        </ThemeProvider>
+    </div>);
 }
 
 export default App;
