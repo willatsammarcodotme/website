@@ -20,6 +20,7 @@ function App () {
 
     return (<div className="App">
         <ThemeProvider theme={theme}>
+            <Box padding={1}>
             <PersonHeader
                 fullName='William Sammarco'
                 contacts={contacts}
@@ -50,16 +51,16 @@ function App () {
                         company='B.S. in Computer Science, Minor in Economics'
                         jobTitle='University Of Illinois, College of Engineering - Chicago, Illinois'
                         dates={{end : new Date('8/1/2010')}}
-                        breakpoint={'lg'}
                     />
                 </Box>
             </DivideSection>
-            <Fab color='primary' aria-label="download" sx={{position : 'fixed', bottom: 3, right: 3}}>
+            <Fab color='primary' aria-label="download" sx={{position : 'fixed', bottom: '24px', right: '24px'}}>
                 <a href='william_sammarco.pdf' target='_blank'><FileDownloadIcon htmlColor='white'/></a>
             </Fab>
-
+            </Box>
         </ThemeProvider>
-    </div>);
+    </div>
+    );
 }
 
 export default App;
