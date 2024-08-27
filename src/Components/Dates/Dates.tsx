@@ -1,23 +1,24 @@
 import React, { FunctionComponent } from 'react';
 import { Typography } from '@mui/material';
-
-const getMmYyyy = (date: Date) => `${date.getMonth() + 1}/${date.getFullYear()}`
+import { getMmYyyy } from '../../utils/utils-map';
+import { Variant } from '@mui/material/styles/createTypography';
 
 export interface DatesProps {
     start?: Date,
     end?: Date,
+    variant?: Variant
 }
 
 type Props = DatesProps;
 
-const Dates: FunctionComponent<Props> = ({start, end}) => {
+const Dates: FunctionComponent<Props> = ({start, end, variant='h2'}) => {
 
     const datesRender = start === undefined
         ? getMmYyyy(end ?? new Date())
         : `${getMmYyyy(start)} - ${end ? getMmYyyy(end) : 'Present'}`;
 
     return (
-        <Typography variant='h2'>
+        <Typography variant={variant}>
             {datesRender}
         </Typography>
     )

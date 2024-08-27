@@ -25,20 +25,20 @@ const CompanyHeader: FunctionComponent<Props> = ({company, jobTitle, dates, brea
             <Grid
                 item
                 xs={12}
-                {...{[breakpoint] : 6}}
+                {...{[breakpoint] : 9}}
                 className='resumeheader-companyjd-wrapper'
             >
                 <Typography variant='h2' className='resumeheader-company'>
                     {company}
                 </Typography>
-                {matchXs && <Dates {...dates} />}
+                {matchXs && <Dates {...dates} variant='h3' />}
                 <Typography variant='h3' className='resumeheader-jobtitle'>
                     {jobTitle}
                 </Typography>
             </Grid>
             {!matchXs && <Grid
                 item
-                sm={6}
+                {...{[breakpoint] : 3}}
                 className='resumeheader-dates'
                 sx={{[theme.breakpoints.up("sm")] : {textAlign : 'right'}}}
             >

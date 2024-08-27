@@ -11,3 +11,4 @@ export const mapWork = (json: any) => {
         achievements : json?.achievements
     }
 }
+export const getMmYyyy = (date: Date) => `${date.getMonth() + 1}/${date.getFullYear()}`
