@@ -4,7 +4,7 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
-import { Box, ThemeProvider, useMediaQuery } from "@mui/material";
+import { Box, ThemeProvider } from "@mui/material";
 import { theme } from './theme/theme'
 import Resume from './Components/Resume/Resume';
 
