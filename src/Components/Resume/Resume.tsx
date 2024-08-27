@@ -10,6 +10,7 @@ import {
     minor,
     school,
     skillItems,
+    summaryText,
     university,
     workItems
 } from '../../const/resume-items';
@@ -34,10 +35,7 @@ const Resume = () => {
             />
             <DivideSection>
                 <Summary targetTitle='Lead Software Engineer'>
-                    Experienced technical lead building scalable solutions across many industries in 11 years of
-                    software
-                    development. Effectve leader, demonstrator, communicator. Collaborative team player with steady
-                    accountable growth. Expert in React, .NET, ASP, C#, HTML5 and many JavaScript frameworks.
+                    {summaryText}
                 </Summary>
             </DivideSection>
             <DivideSection sectionName={'Skills'}>
