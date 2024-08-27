@@ -148,7 +148,7 @@ export const skillItems = [
 export const contacts: ContactProps[] = [
     {text : '773-302-6027', icon : PhoneIcon, hrefProtocol : 'tel:'},
     {text : 'will@sammarco.me', icon : EmailIcon, hrefProtocol : 'mailto:'},
-    {text : 'linkedin.com/in/williamsammarco', icon : LinkIcon, hrefProtocol : 'https:'}
+    {text : 'linkedin.com/in/williamsammarco', icon : LinkIcon, hrefProtocol : 'https://www.'}
 ];
 
 export const major = 'B.S. in Computer Science';
