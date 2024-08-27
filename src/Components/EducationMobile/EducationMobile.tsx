@@ -1,6 +1,5 @@
 import React, { FunctionComponent, ReactNode } from 'react';
 import { Box, Grid, Typography } from '@mui/material';
-import Dates from '../Dates/Dates';
 import { getMmYyyy } from '../../utils/utils-map';
 
 interface OwnProps {

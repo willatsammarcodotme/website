@@ -26,6 +26,8 @@
     "react-dom": "^17.0.0 || ^18.0.0"
   },
   "scripts": {
+    "lint:check": "eslint .",
+    "lint:fix": "eslint --fix .",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
