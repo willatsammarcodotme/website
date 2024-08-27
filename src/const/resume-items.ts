@@ -151,3 +151,9 @@ export const contacts: ContactProps[] = [
     {text : 'linkedin.com/in/williamsammarco', icon : LinkIcon, hrefProtocol : 'https:'}
 ];
 
+export const major = 'B.S. in Computer Science';
+export const minor = 'Minor in Economics';
+export const university = 'University Of Illinois';
+export const school = 'College of Engineering';
+export const campusLoc = 'Chicago, Illinois';
+export const gradDate = '8/1/2010';
