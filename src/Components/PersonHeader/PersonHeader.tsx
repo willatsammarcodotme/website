@@ -28,14 +28,14 @@ const PersonHeader: FunctionComponent<Props> = ({fullName, contacts}) => {
         <Grid container className='personheader-wrapper' sx={{marginBottom : 1}}>
             <Grid item xs={12}><Typography variant='h1' sx={sxFullName}> {fullName}</Typography></Grid>
             {matchXs
-                ? <Box sx={{marginBlock: 2}}>
+                ? <Box sx={{marginBlock: 3}}>
                 {contacts.map((contactProps) => (
                     <Grid key={contactProps.text} item xs={12} sx={leftAlign}>
                         <Contact {...contactProps} />
                     </Grid>
                 ))}
                 </Box>
-                : <Grid item xs={12} sx={leftAlign}>
+                : <Grid item xs={12} sx={{...leftAlign, marginBlock: 2}}>
                     {contacts.map((contactProps) => (
                         <Contact key={contactProps.text} {...contactProps} />
                     ))}
