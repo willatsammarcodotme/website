@@ -12,7 +12,7 @@ function App () {
 
     return (<div className="App">
             <ThemeProvider theme={theme}>
-                <Box padding={1}>
+                <Box padding={3}>
                     <Resume />
                 </Box>
             </ThemeProvider>
